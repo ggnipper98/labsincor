@@ -33,7 +33,7 @@ def copy_window():
 
 def show_about():
     # Show an "About" message box
-    messagebox.showinfo("Sobre", "Versão 0.1")
+    messagebox.showinfo("Sobre", "Versão 1. acesse github.com/ggnipper98/labsincor para baixar, acessar o codigo fonte e ver os exames suportados. Reportar bugs ao email ")
 
 
 
