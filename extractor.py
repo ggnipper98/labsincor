@@ -1,6 +1,11 @@
 import json
 import PyPDF2
 import re
+import pkg_resources
+
+def read_data_file():
+    data_string = pkg_resources.resource_string(__name__, 'exames.json')
+    return json.loads(data_string.decode())
 
 def extractor(filename):
     def extract_numbers(string):
@@ -9,8 +14,8 @@ def extractor(filename):
         # Return the matches as a list of floats
         return [float(match.replace(',', '.')) for match in matches]
     # Abre o arquivo PDF em modo de leitura binária
-    with open("exames.json", "r") as f:
-        exames = json.load(f)
+    exames = read_data_file()
+
 
     with open(filename, 'rb') as file:
         # Cria um objeto PDF
