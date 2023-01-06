@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
+import webbrowser
 
 import extractor
 
@@ -35,7 +36,9 @@ def show_about():
     # Show an "About" message box
     messagebox.showinfo("Sobre", "Versão 1. acesse github.com/ggnipper98/labsincor para baixar, acessar o codigo fonte e ver os exames suportados. Reportar bugs ao email ")
 
-
+def open_website():
+    # Open the website in the default web browser
+    webbrowser.open("https://github.com/ggnipper98/labsincor")
 
 # Create the main window
 window = tk.Tk()
@@ -47,8 +50,16 @@ top_menu = tk.Frame(window)
 about_button = tk.Button(top_menu, text="Sobre", command=show_about)
 about_button.pack(side=tk.LEFT)
 
+# Create the button
+website_button = tk.Button(window, text="Visitar o site", command=open_website)
+
+
 # Add the top menu to the main window
+website_button.pack(side=tk.BOTTOM, fill=tk.X)
 top_menu.pack(side=tk.TOP, fill=tk.X)
+
+# Configure the button's style
+website_button.configure(background="#f0f0f0", foreground="#000000", font=("Arial", 10))
 
 # Configure the style of the about button
 about_button.configure(background="#f0f0f0", foreground="#000000", font=("Arial", 10))
@@ -78,6 +89,7 @@ copy_button.pack()
 # Cria um botão para limpar a janela de texto
 clear_button = tk.Button(window, text="Limpar", command=clear_window)
 clear_button.pack()
+
 
 
 # Inicia o loop de eventos do Tkinter
