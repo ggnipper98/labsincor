@@ -1,25 +1,38 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import webbrowser
+import urllib.request
 
 import extractor
 
-def select_file():
-    # Abre um diálogo de seleção de arquivo e obtém o arquivo selecionado
-    file_path = filedialog.askopenfilename()
+def download_file(url):
+    # Download the file from the web link
+    response = urllib.request.urlopen(url)
 
-    # Atualiza a etiqueta do caminho do arquivo com o arquivo selecionado
-    file_label.config(text=file_path)
+    # Read the contents of the file
+    file_contents = response.read()
 
-def process_file():
-    # Obtém o caminho do arquivo da etiqueta do caminho do arquivo
-    file_path = file_label.cget("text")
+    # Write the contents to a local file
+    with open("downloaded_file.pdf", "wb") as f:
+        f.write(file_contents)
 
-    # Realiza alguma ação no arquivo (por exemplo, lê o conteúdo)
-    contents = extractor.extractor(file_path)
+def on_focus_in(event):
+    # Delete the default text when the input field is clicked
+    link_input.delete(0, tk.END)
 
-    # Exibe o conteúdo do arquivo na janela de texto
-    text_window.insert(tk.END, contents + "\n" +  "\n" )
+def process_link():
+    # Get the web link from the input field
+    link = link_input.get()
+
+    # Download the file from the web link
+    download_file(link)
+
+    # Process the downloaded file
+    contents = extractor.extractor("downloaded_file.pdf")
+
+    # Display the contents of the file in the text window
+    text_window.insert(tk.END, contents + "\n" +  "\n")
+
 
 def clear_window():
     # Limpa o conteúdo da janela de texto
@@ -42,6 +55,7 @@ def open_website():
 
 # Create the main window
 window = tk.Tk()
+window.title("LabsInCor")
 
 # Create a frame for the top menu
 top_menu = tk.Frame(window)
@@ -65,16 +79,16 @@ website_button.configure(background="#f0f0f0", foreground="#000000", font=("Aria
 about_button.configure(background="#f0f0f0", foreground="#000000", font=("Arial", 10))
 
 
-# Cria um botão para selecionar um arquivo
-file_button = tk.Button(window, text="Selecionar arquivo", command=select_file)
-file_button.pack()
+# Create an input field for the web link
+link_input = tk.Entry(window)
+link_input.insert(0, "Cole aqui o link para os exames")
+link_input.configure(width=len("Cole aqui o link para os exames"),font=("Arial", 14), justify="center")  # <-- Set the default text
+link_input.pack()
 
-# Cria uma etiqueta para exibir o caminho do arquivo
-file_label = tk.Label(window, text="Nenhum arquivo selecionado")
-file_label.pack()
-
-# Cria um botão para processar o arquivo
-process_button = tk.Button(window, text="Converter a texto", command=process_file)
+# Bind the on_focus_in function to the focus-in event
+link_input.bind("<FocusIn>", on_focus_in)
+# Create a button for processing the web link
+process_button = tk.Button(window, text="Obter Exames do Link", command=process_link)
 process_button.pack()
 
 # Cria uma janela de texto para exibir o conteúdo do arquivo
