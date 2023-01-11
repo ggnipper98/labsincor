@@ -44,7 +44,17 @@ matriz = [
     [["COAGULOGRAMA", " R: ", ""], 250, "Relação Paciente/Normal", 5],
     [["FIBRINOGENIO", " Fib: ", "mg/dL"], 50, "Resultado", 8],
     [["LACTATO VENOSO", " Lact. V: ", "mg/dL"], 50, "Resultado", 8],
-    [["LACTATO ARTERIAL", " Lact. A: ", "mg/dL"], 50, "Resultado", 8]
+    [["LACTATO ARTERIAL", " Lact. A: ", "mg/dL"], 50, "Resultado", 8],
+    [["COLESTEROL", " Col: ", "mg/dL"], 50, "Resultado", 8],
+    [["HDL - COLESTEROL", " HDL: ", "mg/dL"], 50, "Resultado", 8],
+    [["LDL - COLESTEROL", " LDL: ", "mg/dL"], 200, "Resultado", 12],
+    [["NÃO HDL - COLESTEROL", " Não-HDL: ", "mg/dL"], 200, "Resultado", 8],
+    [["HORMONIO TIREOESTIMULANTE", " TSH: ", "µUI/mL"], 50, "Resultado", 8],
+    [["HEMOGLOBINA GLICADA", " Hb1AC: ", "%"], 200, "Resultado", 10],
+    [["PROTEINA C REATIVA", " PCR: ", "mg/L"], 50, "Resultado", 8]
+    
+    
+
 
 
     
