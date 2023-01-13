@@ -1,6 +1,8 @@
 from fastapi import FastAPI, File, UploadFile
 import os
-from parser.extractor import *
+import sys
+sys.path.append( './parser' )
+from extractor import *
 
 app = FastAPI()
 
