@@ -1,6 +1,8 @@
 import json
 import PyPDF2
 import re
+import sys
+sys.path.append( './parser' )
 from exames import *
 
 

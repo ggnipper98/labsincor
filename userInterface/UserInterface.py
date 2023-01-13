@@ -2,8 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import webbrowser
 import urllib.request
-
-import extractor
+import parser.extractor as extractor
 
 def download_file(url):
     # Download the file from the web link

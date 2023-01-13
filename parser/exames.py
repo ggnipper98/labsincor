@@ -1,5 +1,5 @@
 matriz = [
-    [["Hemoglobina", " Hb :", "g/dL"], 10, "Hemoglobina", 10],
+    [["Hemoglobina", " Hb: ", "g/dL"], 10, "Hemoglobina", 10],
     [["CONTAGEM DE PLAQUETAS", " Plqt: ", "/mm³"], 45, "Resultado", 14],
     [["Leucócitos", " Leuco: ", "/mm³"], 12, "Leucócitos", 12],
     [["UREIA", " U: ", "mg/dL"], 87, "Resultado", 12],

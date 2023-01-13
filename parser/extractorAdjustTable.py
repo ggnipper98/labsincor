@@ -1,6 +1,8 @@
 import json
 import PyPDF2
 import re
+import sys
+sys.path.append( './parser' )
 from exames import *
 
 def extractor(filename):
@@ -60,4 +62,3 @@ def extractor(filename):
                 substring = substring
         print(substring)  
 
-extractor('gaso_v.pdf')

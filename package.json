@@ -1,0 +1,17 @@
+{
+    "name": "LabsInCor",
+    "version": "1.0.0",
+    "description": "Facilite sua vida no InCor",
+    "main": "index.js",
+    "scripts": {
+      "build": "webpack -c webpack.config.js"
+    },
+    "keywords": [],
+    "author": "Guilherme Gnipper",
+    "license": "MIT",
+    "devDependencies": {
+      "transcrypt-loader": "^1.0.2",
+      "webpack": "^5.72.1",
+      "webpack-cli": "^4.9.2"
+    }
+  }
