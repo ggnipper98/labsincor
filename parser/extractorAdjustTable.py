@@ -1,9 +1,7 @@
 import json
 import PyPDF2
 import re
-from exames import *
-
-
+from parser.exames import *
 
 def extractor(filename):
     # Define uma função para extrair números de uma string usando uma expressão regular
@@ -26,6 +24,7 @@ def extractor(filename):
             page = pdf.pages[page_num]
             # Extrai o texto da página e adicione-o ao texto total
             text = text + page.extract_text()
+        print(text)
         
         # Inicializa uma string vazia para armazenar os dados dos exames extraídos
         substring = ''
@@ -59,5 +58,5 @@ def extractor(filename):
             except:
                 # Se ocorrer uma exceção (por exemplo, se nenhum valor foi encontrado), não faça nada
                 substring = substring
-        # Retorna a string de resultados
-        return substring
+        print(substring)  
+

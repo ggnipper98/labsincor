@@ -1,2 +1,16 @@
 .env
 __pycache__
+pdf
+pdf_files
+/target
+/dist
+**/*.rs.bk
+Cargo.lock
+bin/
+pkg/
+wasm-pack.log
+worker/
+node_modules/
+.cargo-ok
+/__target__
+/env
