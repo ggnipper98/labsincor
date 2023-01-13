@@ -1,7 +1,9 @@
 import json
 import PyPDF2
 import re
-from parser.exames import *
+import sys
+sys.path.append( './parser' )
+from exames import *
 
 def extractor(filename):
     # Define uma função para extrair números de uma string usando uma expressão regular
